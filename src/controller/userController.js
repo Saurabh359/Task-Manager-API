@@ -68,7 +68,7 @@ exports.removeUser= async(req,res)=> {
         await taskdb.removeAllTask({ userId: data.id})
         const result= await userdb.removeUser(data)
     
-        if(!result){
+        if(result){
             res.status(200)
                 .json(result)
         }
